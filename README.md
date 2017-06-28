@@ -5,3 +5,4 @@ cli-parsers-17.06 Description
 - [ ] fix license inside 'setup.cfg' (x2)
 - [ ] review 'FIXME' marks
 - [ ] add 'MANIFEST.in'
+- [ ] add pypi 'isort'
