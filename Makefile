@@ -29,10 +29,12 @@ cov cover coverage:
 
 
 clean:
+	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[cod]' `
 	@rm -rf `find . -type d -name '*.egg-info' `
 	@rm -rf ./dist/
 	@rm -rf ./.tox/
+	@rm -f .coverage
 	@rm -f .install-deps
 	@rm -f .flake
 	@rm -f .develop
