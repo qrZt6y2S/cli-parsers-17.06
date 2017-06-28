@@ -1,5 +1,6 @@
 # UNIX only
 
+
 all: test
 
 
@@ -23,13 +24,18 @@ test: .develop
 	@pytest -q ./tests
 
 
+cov cover coverage:
+	tox
+
+
 clean:
 	@rm -f `find . -type f -name '*.py[cod]' `
 	@rm -rf `find . -type d -name '*.egg-info' `
 	@rm -rf ./dist/
+	@rm -rf ./.tox/
 	@rm -f .install-deps
 	@rm -f .flake
 	@rm -f .develop
 
 
-.PHONY: all test clean
+.PHONY: all test cov clean
