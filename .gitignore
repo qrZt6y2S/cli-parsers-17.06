@@ -2,7 +2,13 @@
 ## Custom
 ##
 
+# PyCharm
 .idea/
+
+# Makefile
+.install-deps
+.flake
+.develop
 
 ##
 ## Copy of https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
