@@ -28,6 +28,11 @@ cov cover coverage:
 	tox
 
 
+cov-dev-full: .develop
+	@pytest --cov=./cli_parsers/ --cov-report=term --cov-report=html
+	@echo "open file://`pwd`/htmlcov/index.html"
+
+
 clean:
 	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[cod]' `
@@ -35,9 +40,10 @@ clean:
 	@rm -rf ./dist/
 	@rm -rf ./.tox/
 	@rm -f .coverage
+	@rm -rf ./htmlcov/
 	@rm -f .install-deps
 	@rm -f .flake
 	@rm -f .develop
 
 
-.PHONY: all test cov clean
+.PHONY: all test cov cov-dev-full clean
