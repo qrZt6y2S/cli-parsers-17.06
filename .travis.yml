@@ -14,8 +14,7 @@ python:
   - 2.7
 
 install:
-  - pip install -U setuptools
-  - pip install -r requirements-ci.txt
+  - pip install -Ur requirements-ci.txt
   - pip install codecov
 
 script:
