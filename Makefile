@@ -29,11 +29,6 @@ cov cover coverage:
 	@echo "open file://`pwd`/htmlcov/index.html"
 
 
-cov-dev-full: .develop
-	@pytest --cov=./cli_parsers/ --cov-report=term --cov-report=html
-	@echo "open file://`pwd`/htmlcov/index.html"
-
-
 clean:
 	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[cod]' `
