@@ -47,4 +47,4 @@ clean:
 	@rm -f .develop
 
 
-.PHONY: all test cov cov-dev-full clean
+.PHONY: all test cov clean
