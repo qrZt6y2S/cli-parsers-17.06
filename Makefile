@@ -1,11 +1,7 @@
 # UNIX only
 
-
-all: test
-
-
 .install-deps: requirements-dev.txt
-	@pip install -U -r requirements-dev.txt
+	@pip install -Ur requirements-dev.txt
 	@touch .install-deps
 
 
@@ -21,11 +17,7 @@ all: test
 
 
 test: .develop
-	@pytest -q ./tests
-
-
-cov cover coverage:
-	tox
+	@pytest --cov=./cli_parsers/ --cov-report=term --cov-report=html
 	@echo "open file://`pwd`/htmlcov/index.html"
 
 
@@ -42,4 +34,4 @@ clean:
 	@rm -f .develop
 
 
-.PHONY: all test cov clean
+.PHONY: test clean
