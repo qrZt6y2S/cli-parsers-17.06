@@ -3,34 +3,39 @@
 from cli_parsers.virsh_list import parse_cmd_output as parse_virsh_list_output
 
 
+# ----------------------------------------------------------------
+
 out01 = ("""
  Id    Name                           State
-----------------------------------------------------
- 3     instance-000003db              running
- 4     instance-0000047a              running
 """)
 
 out02 = ("""
  Id    Name                           State
 ----------------------------------------------------
- 3     instance-000003db              running
- -     instance-00000015              shut off
 """)
 
-out88 = ("""
+out03 = ("""
  Id    Name                           State
 ----------------------------------------------------
  3     instance-000003db              running
  4     instance-0000047a              running
- 28    instance-000009f3              running
- 29    instance-00000a0b              running
- 30    instance-000009f6              running
- 31    instance-00000a02              running
+""")
+
+out04 = ("""
+ Id    Name                           State
+----------------------------------------------------
+ 3     instance-000003db              running
  -     instance-00000015              shut off
 """)
 
+# ----------------------------------------------------------------
 
-def test_parse_virsh_list_output():
+
+def test_parse_virsh_list_out02():
+    assert parse_virsh_list_output(out02, 3) == []
+
+
+def test_parse_virsh_list_out03():
     res_list = [
         {
             'Id': '3',
@@ -44,10 +49,10 @@ def test_parse_virsh_list_output():
         }
     ]
 
-    assert parse_virsh_list_output(out01, 3) == res_list
+    assert parse_virsh_list_output(out03, 3) == res_list
 
 
-def test_parse_virsh_list_output02():
+def test_parse_virsh_list_out04():
     res_list = [
         {
             'Id': '3',
@@ -61,4 +66,4 @@ def test_parse_virsh_list_output02():
         }
     ]
 
-    assert parse_virsh_list_output(out02, 3) == res_list
+    assert parse_virsh_list_output(out04, 3) == res_list

@@ -26,6 +26,7 @@ test: .develop
 
 cov cover coverage:
 	tox
+	@echo "open file://`pwd`/htmlcov/index.html"
 
 
 cov-dev-full: .develop
