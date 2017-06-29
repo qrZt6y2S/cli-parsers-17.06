@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from .exceptions import NotEnoughLinesError
 
 
 def double_space_split(in_str):
@@ -10,8 +11,7 @@ def parse_cmd_output(in_text, columns_count):
     lines_count = len(lines)
 
     if lines_count < 2:
-        # FIXME: change Exception type
-        raise Exception
+        raise NotEnoughLinesError('lines == {0} (expected >= 2)'.format(lines_count))
     elif lines_count == 2:
         result = []
     else:
