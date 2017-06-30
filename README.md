@@ -6,3 +6,8 @@ cli-parsers-17.06 Description
 - [x] review 'FIXME' marks
 - [ ] add 'MANIFEST.in'
 - [ ] add pypi 'isort'
+- [ ] add pyup.io integration
+- [ ] add badges (x2)
+- [ ] delete tox
+- [ ] import name inside __init__
+- [ ] add './.cache/' clean
