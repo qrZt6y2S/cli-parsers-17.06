@@ -5,5 +5,5 @@ class CliParsersBaseError(StandardError):
     """Base error for CliParsers"""
 
 
-class NotEnoughLinesError(CliParsersBaseError):
+class NotEnoughLinesError(CliParsersBaseError, ValueError):
     """Not enough lines for parsing"""

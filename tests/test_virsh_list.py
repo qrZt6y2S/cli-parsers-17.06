@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from pytest import raises
 
 from cli_parsers.virsh_list import parse_cmd_output as parse_virsh_list_output
+from cli_parsers.exceptions import NotEnoughLinesError
 
 
 # ----------------------------------------------------------------
@@ -29,6 +31,11 @@ out04 = ("""
 """)
 
 # ----------------------------------------------------------------
+
+
+def test_parse_virsh_list_out01():
+    with raises(NotEnoughLinesError, message="Expecting NotEnoughLinesError"):
+        parse_virsh_list_output(out01, 3)
 
 
 def test_parse_virsh_list_out02():
